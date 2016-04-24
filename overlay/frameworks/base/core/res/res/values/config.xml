@@ -195,4 +195,60 @@
 
     <!-- The device supports freeform window management -->
     <bool name="config_freeformWindowManagement">true</bool>
+    <!-- Configure wifi tcp buffersizes in the form:
+         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,4194304,262144,524288,1048576</string>
+
+    <!-- Configure mobile tcp buffer sizes in the form:
+         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+         If no value is found for the rat-name in use, the system default will be applied.
+    -->
+    <string-array name="config_mobile_tcp_buffers">
+        <item>gprs:4092,8760,11680,4096,8760,11680</item>
+        <item>edge:4093,26280,35040,4096,16384,35040</item>
+        <item>umts:4094,87380,110208,4096,16384,110208</item>
+        <item>hsdpa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsupa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspap:4094,87380,1220608,4096,16384,1220608</item>
+        <item>lte:524288,1048576,2560000,524288,1048576,2560000</item>
+    </string-array>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
+    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
+         app standby.  These are not enabled by default because they require a standard
+         cloud-to-device messaging service for apps to interact correctly with the modes
+         (such as to be able to deliver an instant message to the device even when it is
+         dozing).  This should be enabled if you have such services and expect apps to
+         correctly use them when installed on your device.  Otherwise, keep this disabled
+         so that applications can still use their own mechanisms. -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+
+    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDoze">13</integer>
+
+    <!-- If true, the doze component is not started until after the screen has been
+          turned off and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOff">true</bool>
+
+    <!-- Power Management: Specifies whether to decouple the interactive of the
+         device from the display on/off state.
+         When false, setInteractive(..., true) will be called before the display is turned on
+         and setInteractive(..., false) will be called after the display is turned off.
+         This mode provides best compatibility for devices that expect the interactive
+         state to be tied to the display state.
+         When true, setInteractive(...) will be called independently of whether the display
+         is being turned on or off.  This mode enables the power manager to reduce
+         clocks and disable the touch controller while the display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to power.h for details.
+    -->
+<bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+
 </resources>
