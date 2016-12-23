@@ -205,6 +205,8 @@ on post-fs-data
     chown system system /sys/kernel/ipv4/tcp_rmem_def
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
+# fix permission for telephony
+    chmod 0644 /proc/cmdline
 
 # Audio (Earjack)
     chown system radio /sys/class/audio/earjack/select_jack
