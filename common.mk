@@ -115,6 +115,9 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
+# Doze mode
+PRODUCT_PACKAGES += \
+OneplusDoze
 
 # Wifi
 PRODUCT_PACKAGES += \
