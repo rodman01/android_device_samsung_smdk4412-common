@@ -20,7 +20,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libbinder
 
 LOCAL_C_INCLUDES += proto
-LOCAL_CFLAGS := -Wall -Werror -DPB_ENABLE_MALLOC -Wno-unused-parameter
+LOCAL_CFLAGS := -Wall -Werror -DPB_ENABLE_MALLOC -Wno-unused-parameter -DPB_FIELD_16BIT
 
 ifeq ($(BOARD_MODEM_TYPE),mdm9x35)
 LOCAL_CFLAGS += -DMDM9X35_MODEM
