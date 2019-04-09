@@ -60,6 +60,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service.basic
+
 # Packages
 PRODUCT_PACKAGES += \
     AdvancedDisplay \
