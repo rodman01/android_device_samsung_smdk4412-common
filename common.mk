@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
+# Battery
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.small_battery=true
+
 # Packages
 PRODUCT_PACKAGES += \
     AdvancedDisplay \
