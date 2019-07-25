@@ -60,7 +60,8 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
 
 TARGET_LD_SHIM_LIBS := \
     /system/lib/libsuspend.so|libsuspend-shim.so \
-    /system/lib/libandroid_servers.so|libsuspend-shim.so
+    /system/lib/libandroid_servers.so|libsuspend-shim.so \
+    /system/vendor/bin/hw/rild|rild_socket.so
 
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
@@ -122,6 +123,7 @@ BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
 BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := mdm9x35
 TARGET_SPECIFIC_HEADER_PATH += device/samsung/smdk4412-common/include
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd

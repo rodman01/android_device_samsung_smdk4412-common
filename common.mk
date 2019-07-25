@@ -113,6 +113,7 @@ PRODUCT_PACKAGES += \
     tinymix \
     libstagefright-shim \
     libsuspend-shim \
+    rild_socket \
     libC
 
 # USB
