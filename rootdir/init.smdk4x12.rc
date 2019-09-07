@@ -371,6 +371,13 @@ on post-fs-data
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
+    
+    # Touchkeys
+	write /sys/devices/virtual/sec/sec_touchkey/touchkey_led_on_keypress 1
+	
+	# Enable LED-notification via BLN
+    write /sys/devices/virtual/misc/backlightnotification/enabled 1
+    write /sys/devices/virtual/misc/backlightnotification/led_blink_enabled 1
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -441,6 +448,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     #   group wifi inet keystore
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
+    group system wakelock
     disabled
     oneshot
 
@@ -454,6 +462,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     #   group wifi inet keystore
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
+    group system wakelock
     disabled
     oneshot
 
