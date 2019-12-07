@@ -71,6 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Packages
 PRODUCT_PACKAGES += \
     AdvancedDisplay \
+    android.hardware.light@2.0-service.samsung \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos \
     android.hardware.graphics.allocator@2.0-impl-exynos4 \
     android.hardware.graphics.mapper@2.0-impl-exynos4 \
@@ -82,8 +83,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.vibrator@1.0-impl \
     libbt-vendor \
@@ -105,7 +104,6 @@ PRODUCT_PACKAGES += \
     libsecion \
     libsync \
     libUMP \
-    lights.smdk4x12 \
     macloader \
     tinymix \
     libstagefright-shim \
