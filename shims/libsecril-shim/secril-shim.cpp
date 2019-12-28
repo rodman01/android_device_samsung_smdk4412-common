@@ -531,6 +531,7 @@ static void onCompleteQueryAvailableNetworks(RIL_Token t, RIL_Errno e, void *res
 	free(newResponse);
 }
 
+#ifndef MDM9X35_MODEM
 static void fixupSignalStrength(void *response) {
 	int gsmSignalStrength;
 
@@ -552,6 +553,21 @@ static void fixupSignalStrength(void *response) {
 	p_cur->LTE_SignalStrength.rsrq = INT_MAX;
 	p_cur->LTE_SignalStrength.rssnr = INT_MAX;
 }
+#else
+static void fixupSignalStrength(void *response) {
+	int *resp;
+
+	resp = reinterpret_cast<int*>(response);
+
+        //gsm
+        resp[0] &= 0xff;
+        //cdma
+        resp[2] %= 256;
+        resp[4] %= 256;
+        resp[7] &= 0xff;
+}
+#endif
+
 
 static void onRequestCompleteShim(RIL_Token t, RIL_Errno e, void *response, size_t responselen) {
 	int request;
