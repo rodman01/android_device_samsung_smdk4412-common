@@ -200,9 +200,6 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 
 SELINUX_IGNORE_NEVERALLOWS := true
 
-# Override healthd HAL
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
-
 # LPM Battery Percentage
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
