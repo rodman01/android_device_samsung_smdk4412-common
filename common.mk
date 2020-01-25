@@ -154,7 +154,9 @@ PRODUCT_PACKAGES += \
 #   libOMX.SEC.VP8.Decoder
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.ccodec=0
+    debug.stagefright.ccodec=0 \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
