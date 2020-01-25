@@ -153,6 +153,9 @@ PRODUCT_PACKAGES += \
     libOMX.SEC.M4V.Encoder
 #   libOMX.SEC.VP8.Decoder
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(COMMON_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
