@@ -69,6 +69,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
+# Use legacy ADB USB support
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.nonblocking_ffs=false
+
 # Battery
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.small_battery=true
