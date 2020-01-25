@@ -254,6 +254,9 @@ TARGET_HAL_PATH := hardware/samsung/exynos4/hal
 TARGET_OMX_PATH := hardware/samsung/exynos/multimedia/openmax
 $(call inherit-product, hardware/samsung/exynos4x12.mk)
 
+# Shipping API level
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
 # Include non-opensource parts
 $(call inherit-product, vendor/samsung/smdk4412-common/smdk4412-common-vendor.mk)
 
