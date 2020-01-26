@@ -62,10 +62,6 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/rild=19
 
-TARGET_LD_SHIM_LIBS := \
-    /system/lib/libsuspend.so|libsuspend-shim.so \
-    /system/lib/libandroid_servers.so|libsuspend-shim.so
-
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/bin/hw/rild=22 \
     /system/vendor/lib/libsec-ril.so=22 \
