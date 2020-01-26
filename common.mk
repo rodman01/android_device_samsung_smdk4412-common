@@ -138,11 +138,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediaserver.rc:system/etc/init/mediaserver.rc
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_exynos4 \
-    charger_res_images
-
 # MFC API
 PRODUCT_PACKAGES += \
     libsecmfcdecapi \
@@ -208,10 +203,6 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
