@@ -69,7 +69,8 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/lib/libomission_avoidance.so=22 \
     /system/lib/libfactoryutil.so=22 \
     /system/vendor/lib/libakm.so=22 \
-    /system/vendor/lib/libsecril-client.so=22
+    /system/vendor/lib/libsecril-client.so=22 \
+    /system/vendor/lib/hw/gps.exynos4.vendor.so=22
 
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
