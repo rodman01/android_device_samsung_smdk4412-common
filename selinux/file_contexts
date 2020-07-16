@@ -86,6 +86,7 @@
 # healthd
 /sys/devices/platform/i2c-gpio.17/i2c-17/17-0066/max77693-charger(/.*)?	u:object_r:sysfs_batteryinfo:s0
 /sys/devices/platform/samsung-battery(/.*)?                          u:object_r:sysfs_batteryinfo:s0
+
 /sys/devices/platform/i2c-gpio.14/i2c-14/14-0036/power_supply(/.*)?	u:object_r:sysfs_batteryinfo:s0
 
 # CPU
@@ -122,3 +123,7 @@
 
 # Slab
 /sys/kernel/slab(/.*)?						u:object_r:proc_slabinfo:s0
+
+# Boeffla
+/sys/devices/virtual/misc/boeffla_sound(/.*)?			u:object_r:sysfs_boeffla:s0
+/sys/class/misc/boeffla_sound(/.*)?				u:object_r:sysfs_boeffla:s0
